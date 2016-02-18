@@ -359,6 +359,7 @@ from .freeze_impl import userstory_freezer
 from .freeze_impl import issue_freezer
 from .freeze_impl import task_freezer
 from .freeze_impl import wikipage_freezer
+from .freeze_impl import productincrement_freezer
 
 register_freeze_implementation("projects.project", project_freezer)
 register_freeze_implementation("milestones.milestone", milestone_freezer,)
@@ -366,6 +367,7 @@ register_freeze_implementation("userstories.userstory", userstory_freezer)
 register_freeze_implementation("issues.issue", issue_freezer)
 register_freeze_implementation("tasks.task", task_freezer)
 register_freeze_implementation("wiki.wikipage", wikipage_freezer)
+register_freeze_implementation("productships.productincrement", productincrement_freezer)
 
 from .freeze_impl import project_values
 from .freeze_impl import milestone_values
@@ -373,6 +375,7 @@ from .freeze_impl import userstory_values
 from .freeze_impl import issue_values
 from .freeze_impl import task_values
 from .freeze_impl import wikipage_values
+from .freeze_impl import productincrement_values
 
 register_values_implementation("projects.project", project_values)
 register_values_implementation("milestones.milestone", milestone_values)
@@ -380,3 +383,4 @@ register_values_implementation("userstories.userstory", userstory_values)
 register_values_implementation("issues.issue", issue_values)
 register_values_implementation("tasks.task", task_values)
 register_values_implementation("wiki.wikipage", wikipage_values)
+register_values_implementation("productships.productincrement", productincrement_values)

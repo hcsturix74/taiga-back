@@ -71,6 +71,8 @@ class RawAttachmentPerm(PermissionComponent):
             return TaskAttachmentPermission(request, view).check_permissions('retrieve', obj) or is_owner
         elif obj.content_type.app_label == "issues" and obj.content_type.model == "issue":
             return IssueAttachmentPermission(request, view).check_permissions('retrieve', obj) or is_owner
+        elif obj.content_type.app_label == "productships" and obj.content_type.model == "productincrement":
+            return IssueAttachmentPermission(request, view).check_permissions('retrieve', obj) or is_owner
         elif obj.content_type.app_label == "wiki" and obj.content_type.model == "wikipage":
             return WikiAttachmentPermission(request, view).check_permissions('retrieve', obj) or is_owner
         return False

@@ -68,6 +68,18 @@ def issue_timeline(instance, extra_data={}):
     return result
 
 
+@register_timeline_implementation("productships.productincrement", "create")
+@register_timeline_implementation("productships.productincrement", "change")
+@register_timeline_implementation("productships.productincrement", "delete")
+def productincrement_timeline(instance, extra_data={}):
+    result ={
+        "productincrement": service.extract_productincrement_info(instance),
+        "project": service.extract_project_info(instance.project),
+    }
+    result.update(extra_data)
+    return result
+
+
 @register_timeline_implementation("tasks.task", "create")
 @register_timeline_implementation("tasks.task", "change")
 @register_timeline_implementation("tasks.task", "delete")

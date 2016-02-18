@@ -163,6 +163,10 @@ def wikipage_values(diff):
     return values
 
 
+def productincrement_values(diff):
+    values = _common_users_values(diff)
+    return values
+
 ####################
 # Freezes
 ####################
@@ -311,6 +315,30 @@ def issue_freezer(issue) -> dict:
         "blocked_note": issue.blocked_note,
         "blocked_note_html": mdrender(issue.project, issue.blocked_note),
         "custom_attributes": extract_issue_custom_attributes(issue),
+    }
+
+    return snapshot
+
+
+def productincrement_freezer(productincrement) -> dict:
+    snapshot = {
+        "ref": productincrement.ref,
+        "owner": productincrement.owner_id,
+        # "status": productincrement.status_id,
+        # "priority": productincrement.priority_id,
+        # "severity": productincrement.severity_id,
+        # "type": productincrement.type_id,
+        # "milestone": productincrement.milestone_id,
+        # "subject": productincrement.subject,
+        # "description": productincrement.description,
+        "description_html": mdrender(productincrement.project, productincrement.description),
+        # "assigned_to": productincrement.assigned_to_id,
+        "attachments": extract_attachments(productincrement),
+        # "tags": productincrement.tags,
+        # "is_blocked": productincrement.is_blocked,
+        # "blocked_note": productincrement.blocked_note,
+        # "blocked_note_html": mdrender(productincrement.project, productincrement.blocked_note),
+        # "custom_attributes": extract_issue_custom_attributes(productincrement),
     }
 
     return snapshot

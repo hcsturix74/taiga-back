@@ -35,6 +35,7 @@ USER_PERMISSIONS = [
     ('view_tasks', _('View tasks')),
     ('view_wiki_pages', _('View wiki pages')),
     ('view_wiki_links', _('View wiki links')),
+    ('view_productincrements', _('View Increments')),
     ('request_membership', _('Request membership')),
     ('add_us_to_project', _('Add user story to project')),
     ('add_comments_to_us', _('Add comments to user stories')),
@@ -69,6 +70,11 @@ MEMBERS_PERMISSIONS = [
     ('add_issue', _('Add issue')),
     ('modify_issue', _('Modify issue')),
     ('delete_issue', _('Delete issue')),
+    # Issue permissions
+    ('view_productincrements', _('View Increments')),
+    ('add_productincrement', _('Add Increment')),
+    ('modify_productincrement', _('Modify Increment')),
+    ('delete_productincrement', _('Delete Increment')),
     # Wiki page permissions
     ('view_wiki_pages', _('View wiki pages')),
     ('add_wiki_page', _('Add wiki page')),

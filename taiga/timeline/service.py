@@ -112,6 +112,7 @@ def filter_timeline_for_user(timeline, user):
         "view_us": ContentType.objects.get(app_label="userstories", model="userstory"),
         "view_tasks": ContentType.objects.get(app_label="tasks", model="task"),
         "view_issues": ContentType.objects.get(app_label="issues", model="issue"),
+        "view_productincrements": ContentType.objects.get(app_label="issues", model="issue"),
         "view_wiki_pages": ContentType.objects.get(app_label="wiki", model="wikipage"),
         "view_wiki_links": ContentType.objects.get(app_label="wiki", model="wikilink"),
     }
@@ -215,6 +216,14 @@ def extract_issue_info(instance):
         "id": instance.pk,
         "ref": instance.ref,
         "subject": instance.subject,
+    }
+
+
+def extract_productincrement_info(instance):
+    return {
+        "id": instance.pk,
+        "ref": instance.ref,
+        # "subject": instance.subject,
     }
 
 
