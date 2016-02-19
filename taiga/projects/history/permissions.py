@@ -61,3 +61,10 @@ class WikiHistoryPermission(TaigaResourcePermission):
     retrieve_perms = HasProjectPerm('view_project')
     delete_comment_perms = IsCommentProjectOwner() | IsCommentOwner()
     undelete_comment_perms = IsCommentProjectOwner() | IsCommentDeleter()
+
+
+class ProductIncrementHistoryPermission(TaigaResourcePermission):
+    retrieve_perms = HasProjectPerm('view_project')
+    delete_comment_perms = IsCommentProjectOwner() | IsCommentOwner()
+    undelete_comment_perms = IsCommentProjectOwner() | IsCommentDeleter()
+

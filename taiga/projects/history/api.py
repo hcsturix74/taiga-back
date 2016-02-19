@@ -124,3 +124,8 @@ class IssueHistory(HistoryViewSet):
 class WikiHistory(HistoryViewSet):
     content_type = "wiki.wikipage"
     permission_classes = (permissions.WikiHistoryPermission,)
+
+
+class ProductIncrementHistory(HistoryViewSet):
+    content_type = "productships.productincrement"
+    permission_classes = (permissions.ProductIncrementHistoryPermission,)
