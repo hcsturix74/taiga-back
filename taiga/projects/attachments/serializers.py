@@ -63,10 +63,14 @@ class AttachmentSerializer(serializers.ModelSerializer):
 
     def get_markers(self, obj):
         if self.get_is_video(obj):
-            return [
-                {'time': 9.5, 'text': "this"},
-                {'time': 16, 'text': "is"},
-                {'time': 23.6, 'text': "so"},
-                {'time': 28, 'text': "cool"}
-            ]
+            qs = obj.markers.all()
+            from productships.serializers import MarkerSerializer
+            qs = MarkerSerializer(qs, many=True)
+            return qs.data
+            # return [
+            #     {'time': 9.5, 'text': "this"},
+            #     {'time': 16, 'text': "is"},
+            #     {'time': 23.6, 'text': "so"},
+            #     {'time': 28, 'text': "cool"}
+            # ]
         return []
